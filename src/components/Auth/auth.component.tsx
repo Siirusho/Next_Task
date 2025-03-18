@@ -1,11 +1,11 @@
 "use client";
 
-import { Box, Divider, Grid2, Typography } from "@mui/material";
+import { Box, Divider, Grid2, Typography, useTheme } from "@mui/material";
 import { SocialButtons } from "./Components/social-buttons";
 import Image from "next/image";
 import { AuthForm } from "./Components/Form";
 import { useSession } from "next-auth/react";
-import { UploadCV } from "./Components/upload-cv";
+import { Landing } from "../LandingPage";
 
 const textColor = "#4C4D4F80";
 const imgSrc =
@@ -14,11 +14,15 @@ const imgSrc =
 export const Auth = () => {
   const { data: session } = useSession();
 
-  return session ? (
-    <UploadCV />
-  ) : (
-    <Grid2 container bgcolor={"white"} height={"953px"}>
-      <Grid2 size={7} p="40px">
+  const { breakpoints } = useTheme();
+
+  if (session) {
+    return <Landing />;
+  }
+
+  return (
+    <Grid2 container bgcolor={"white"} maxHeight={"943px"}>
+      <Grid2 size={{ xs: 12, md: 7 }} p="40px">
         <Typography variant="h1" fontSize={"34px"} pl="16px">
           Create an account
         </Typography>
@@ -53,12 +57,19 @@ export const Auth = () => {
         <AuthForm />
       </Grid2>
 
-      <Grid2 size={5}>
+      <Grid2
+        size={{ md: 5 }}
+        sx={{
+          [breakpoints.down("md")]: {
+            display: "none",
+          },
+        }}
+      >
         <Image
           src={imgSrc}
-          width={400}
-          height={953}
-          style={{ objectFit: "cover" }}
+          width={370}
+          height={943}
+          style={{ objectFit: "cover", maxHeight: "943px" }}
           alt={"img"}
         />
       </Grid2>

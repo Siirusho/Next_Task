@@ -4,7 +4,6 @@ import {
   FormHelperText,
   Box,
   TextField as MuiTextField,
-  TextFieldProps,
   Typography,
 } from "@mui/material";
 import useScrollIntoView from "@/hooks/useScrollIntoView";
@@ -13,12 +12,13 @@ export const TextField = ({
   fieldName,
   label,
   placeholder,
-  ...rest
+  type,
 }: {
   fieldName: string;
   label?: string;
   placeholder?: string;
-} & TextFieldProps) => {
+  type?: string;
+}) => {
   const { control } = useFormContext();
   const { field, fieldState } = useController({ name: fieldName, control });
   const errorHelperText = fieldState?.error?.message;
@@ -34,7 +34,7 @@ export const TextField = ({
       </Typography>
       <MuiTextField
         {...field}
-        {...rest}
+        type={type}
         value={field.value ?? ""}
         error={Boolean(errorHelperText)}
         fullWidth

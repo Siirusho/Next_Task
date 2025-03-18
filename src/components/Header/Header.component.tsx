@@ -7,9 +7,10 @@ import LogoutIcon from "@mui/icons-material/Logout";
 export const StyledLayout = styled("div")({
   display: "flex",
   flexDirection: "column",
-  height: "100vh",
+  height: "100%",
   background: "#f5eee6",
   paddingTop: "47px",
+  paddingBottom: "47px",
 });
 
 export const Header = () => {

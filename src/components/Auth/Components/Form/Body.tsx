@@ -22,6 +22,7 @@ export const AuthFormBody = () => {
           placeholder="Jane@gmail.com"
         />
         <TextField
+          type="password"
           fieldName="password"
           label="Password"
           placeholder="********"
