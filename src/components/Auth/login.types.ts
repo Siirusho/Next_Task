@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { StaticImageData } from "next/image";
 
 export interface ButtonMapperProps {
   onClick: () => void;
-  icon: ReactNode;
+  icon: StaticImageData;
   label: string;
 }

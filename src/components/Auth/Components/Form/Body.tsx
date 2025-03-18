@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { TextField } from "./FormComponents/TextField";
 import { StyledSubmitButton } from "../auth.styled";
 import { ConsentCheckbox } from "./FormComponents/Consent";

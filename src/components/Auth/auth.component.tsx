@@ -4,7 +4,7 @@ import { Box, Divider, Grid2, Typography } from "@mui/material";
 import { SocialButtons } from "./Components/social-buttons";
 import Image from "next/image";
 import { AuthForm } from "./Components/Form";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const textColor = "#4C4D4F80";
 const imgSrc =
