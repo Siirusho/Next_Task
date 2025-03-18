@@ -36,7 +36,7 @@ export const StyledContainer = styled(Box)(({ theme: { breakpoints } }) => ({
   },
   [breakpoints.down("sm")]: {
     width: "314px",
-    height: "167px",
+    height: "267px",
   },
   background: "linear-gradient(108.58deg, #DBB898 25.3%, #9DC1CE 82.65%)",
   borderRadius: "14px",
