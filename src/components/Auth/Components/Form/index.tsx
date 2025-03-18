@@ -6,14 +6,8 @@ import { AuthFormBody } from "./Body";
 import { authValidationSchema } from "./validation";
 import { signIn } from "next-auth/react";
 import { Typography } from "@mui/material";
+import { UserCredentialsProps } from "../../login.types";
 
-interface UserCredentialsProps {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  consent?: boolean;
-}
 
 export const AuthForm = () => {
   const methods = useForm({

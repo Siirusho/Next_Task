@@ -5,3 +5,11 @@ export interface ButtonMapperProps {
   icon: StaticImageData;
   label: string;
 }
+
+export interface UserCredentialsProps {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  consent?: boolean;
+}
