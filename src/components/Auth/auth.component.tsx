@@ -4,7 +4,8 @@ import { Box, Divider, Grid2, Typography } from "@mui/material";
 import { SocialButtons } from "./Components/social-buttons";
 import Image from "next/image";
 import { AuthForm } from "./Components/Form";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { UploadCV } from "./Components/upload-cv";
 
 const textColor = "#4C4D4F80";
 const imgSrc =
@@ -14,12 +15,7 @@ export const Auth = () => {
   const { data: session } = useSession();
 
   return session ? (
-    <div>
-      <p>Welcome, {session.user?.name}!</p>
-      <button onClick={() => signOut()} className="btn">
-        Sign out
-      </button>
-    </div>
+    <UploadCV />
   ) : (
     <Grid2 container bgcolor={"white"} height={"953px"}>
       <Grid2 size={7} p="40px">
