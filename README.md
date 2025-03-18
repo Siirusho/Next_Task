@@ -21,4 +21,4 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-Deployed URL from vercel - https://next-task-i66o.vercel.app/
+Deployed URL from vercel - [https://next-task-i66o.vercel.app/](https://next-task-nqb9.vercel.app/)
