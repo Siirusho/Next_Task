@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Header } from "@/src/components/Header/Header.component";
 import dynamic from "next/dynamic";
 
 const Auth = dynamic(() =>
@@ -9,9 +9,10 @@ const Auth = dynamic(() =>
 
 const AuthPage = async () => {
   return (
-    <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+    <>
+      <Header />
       <Auth />
-    </Box>
+    </>
   );
 };
 

@@ -1,25 +1,21 @@
-"use client";
-
-import { StyledLayout } from "@/src/components/Header/Header.component";
 import SessionProvider from "@/src/components/SessionProvider";
-import dynamic from "next/dynamic";
-
-const Header = dynamic(() =>
-  import("@/src/components").then((module) => ({
-    default: module.Header,
-    ssr: false,
-  }))
-);
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
         <SessionProvider>
-          <Header />
-          <StyledLayout>
-            <main>{children}</main>
-          </StyledLayout>
+          <main
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              background: "#f5eee6",
+              paddingBottom: "47px",
+            }}
+          >
+            {children}
+          </main>
         </SessionProvider>
       </body>
     </html>

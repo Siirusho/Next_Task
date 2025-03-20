@@ -21,58 +21,65 @@ export const Auth = () => {
   }
 
   return (
-    <Grid2 container bgcolor={"white"} maxHeight={"943px"}>
-      <Grid2 size={{ xs: 12, md: 7 }} p="40px">
-        <Typography variant="h1" fontSize={"34px"} pl="16px">
-          Create an account
-        </Typography>
-        <Typography mt="14px" fontSize={"14px"} pl="16px" color={textColor}>
-          Already have an account?{" "}
-          <Typography
-            component={"span"}
-            display={"inline"}
-            fontSize={"14px"}
-            color="black"
-            sx={{ textDecoration: "underline" }}
+    <Box
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      sx={{ paddingTop: "47px" }}
+    >
+      <Grid2 container bgcolor={"white"} maxHeight={"943px"}>
+        <Grid2 size={{ xs: 12, md: 7 }} p="40px">
+          <Typography variant="h1" fontSize={"34px"} pl="16px">
+            Create an account
+          </Typography>
+          <Typography mt="14px" fontSize={"14px"} pl="16px" color={textColor}>
+            Already have an account?{" "}
+            <Typography
+              component={"span"}
+              display={"inline"}
+              fontSize={"14px"}
+              color="black"
+              sx={{ textDecoration: "underline" }}
+            >
+              Log in
+            </Typography>
+          </Typography>
+
+          <SocialButtons />
+
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            my="30px"
           >
-            Log in
-          </Typography>
-        </Typography>
+            <Divider variant="fullWidth" sx={{ width: "45%" }} />
+            <Typography p="10px" color={textColor}>
+              Or
+            </Typography>
+            <Divider variant="fullWidth" sx={{ width: "45%" }} />
+          </Box>
 
-        <SocialButtons />
+          <AuthForm />
+        </Grid2>
 
-        <Box
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          my="30px"
+        <Grid2
+          size={{ md: 5 }}
+          sx={{
+            [breakpoints.down("md")]: {
+              display: "none",
+            },
+          }}
         >
-          <Divider variant="fullWidth" sx={{ width: "45%" }} />
-          <Typography p="10px" color={textColor}>
-            Or
-          </Typography>
-          <Divider variant="fullWidth" sx={{ width: "45%" }} />
-        </Box>
-
-        <AuthForm />
+          <Image
+            src={imgSrc}
+            width={370}
+            height={943}
+            style={{ objectFit: "cover", maxHeight: "943px" }}
+            alt={"img"}
+          />
+        </Grid2>
       </Grid2>
-
-      <Grid2
-        size={{ md: 5 }}
-        sx={{
-          [breakpoints.down("md")]: {
-            display: "none",
-          },
-        }}
-      >
-        <Image
-          src={imgSrc}
-          width={370}
-          height={943}
-          style={{ objectFit: "cover", maxHeight: "943px" }}
-          alt={"img"}
-        />
-      </Grid2>
-    </Grid2>
+    </Box>
   );
 };
